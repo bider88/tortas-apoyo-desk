@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+$orange: #ed7902;
+$green: #009f4d;
+$yellow: #ffdd00;
+
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}

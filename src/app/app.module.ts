@@ -10,6 +10,7 @@ import { HelpComponent } from './components/help/help.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { InfoComponent } from './components/info/info.component';
+import { ComponentsMaterial } from './components.material';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InfoComponent } from './components/info/info.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ComponentsMaterial
   ],
   providers: [],
   bootstrap: [AppComponent]

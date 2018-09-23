@@ -1,0 +1,20 @@
+.image-torta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.entry-info {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-help {
+  margin: 100px auto 0;
+  width: 400px;
+
+  button {
+    width: 100%;
+    text-transform: uppercase;
+  }
+}
