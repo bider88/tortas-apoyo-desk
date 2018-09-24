@@ -1,16 +1,26 @@
 <div class="container">
   <mat-vertical-stepper [linear]="true" #stepper>
+
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>¿Cómo quieres que quede registrado tu ayuda?</ng-template>
         <div class="div-controls">
 
-          <mat-radio-group class="group-radios" formControlName="option" required>
+          <mat-radio-group class="group-radios" formControlName="option" (ngModelChange)="onChangeRadio($event)" required>
             <mat-radio-button color="warn" [value]="1">Anónimo</mat-radio-button>
             <mat-radio-button color="warn" [value]="2">Alias</mat-radio-button>
             <mat-radio-button color="warn" [value]="3">Facebook</mat-radio-button>
           </mat-radio-group>
-
+          <div class="step-one">
+            <mat-form-field appearance="outline" *ngIf="showInput">
+              <mat-label>Ingrese alias</mat-label>
+              <input matInput placeholder="Input">
+            </mat-form-field>
+            <button mat-raised-button *ngIf="showButton">
+              <i class="fab fa-facebook"></i>
+              Facebook
+            </button>
+          </div>
         </div>
         <div class="bnt-navs">
           <button mat-raised-button color="primary" mat-button matStepperNext>
@@ -20,12 +30,13 @@
         </div>
       </form>
     </mat-step>
+
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Selecciona la cantidad</ng-template>
         <div class="div-controls">
 
-          <mat-tab-group mat-stretch-tabs class="stretched-tabs">
+          <mat-tab-group color="warn" mat-stretch-tabs class="stretched-tabs">
             <mat-tab label="Seleccionar la cantidad">
               <mat-form-field appearance="outline">
                 <mat-label>Selecciona la cantidad</mat-label>
@@ -84,6 +95,7 @@
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <ng-template matStepLabel>Gracias por tu ayuda</ng-template>
       <div class="div-controls">
@@ -117,5 +129,6 @@
         </button>
       </div>
     </mat-step>
+
   </mat-vertical-stepper>
 </div>

@@ -2,6 +2,11 @@ $orange: #ed7902;
 $green: #009f4d;
 $yellow: #ffdd00;
 
+@mixin max-min-width {
+  width: 100%;
+  max-width: 600px;
+}
+
 .bnt-navs {
   margin-top: 50px;
   display: flex;
@@ -30,14 +35,29 @@ $yellow: #ffdd00;
   }
 }
 
-.stretched-tabs {
-  max-width: 600px;
-  width: 100%;
+.step-one {
+  @include max-min-width();
 
-  .mat-form-field {
+  button {
     margin-top: 25px;
     width: 100%;
+    background-color: #3B5998;
+    color: white;
+
+    i {
+      font-size: 1.1em;
+      margin-right: 5px;
+    }
   }
+}
+
+.stretched-tabs {
+  @include max-min-width();
+}
+
+.mat-form-field {
+  margin-top: 25px;
+  width: 100%;
 }
 
 .resume{

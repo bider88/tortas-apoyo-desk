@@ -11,6 +11,8 @@ export class HelpComponent implements OnInit {
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  showInput: boolean = false;
+  showButton: boolean = false;
   option: number = 0;
   alias: string = 'Anónimo';
   quantity: number = 1;
@@ -32,6 +34,20 @@ export class HelpComponent implements OnInit {
 
   goTohome() {
     this.router.navigateByUrl('/');
+  }
+
+  onChangeRadio(val: number) {
+    val = Number(val);
+    if (val === 2) {
+      this.showInput = true;
+      this.showButton = false;
+    } else if ( val === 3 ) {
+      this.showInput = false;
+      this.showButton = true;
+    } else {
+      this.showInput = false;
+      this.showButton = false;
+    }
   }
 
 }
