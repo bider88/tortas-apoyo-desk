@@ -9,7 +9,9 @@ import {
   MatStepperModule,
   MatFormFieldModule,
   MatInputModule,
-  MatRadioModule
+  MatRadioModule,
+  MatTabsModule,
+  MatSelectModule
 } from '@angular/material';
 
 @NgModule({
@@ -22,7 +24,9 @@ import {
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTabsModule,
+    MatSelectModule
   ],
   exports: [
     MatToolbarModule,
@@ -33,7 +37,9 @@ import {
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTabsModule,
+    MatSelectModule
   ]
 })
 export class ComponentsMaterial { }

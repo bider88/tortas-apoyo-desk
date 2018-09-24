@@ -3,9 +3,15 @@
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>¿Cómo quieres que quede registrado tu ayuda?</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>
+        <div class="div-controls">
+
+          <mat-radio-group class="group-radios" formControlName="option" required>
+            <mat-radio-button color="warn" [value]="1">Anónimo</mat-radio-button>
+            <mat-radio-button color="warn" [value]="2">Alias</mat-radio-button>
+            <mat-radio-button color="warn" [value]="3">Facebook</mat-radio-button>
+          </mat-radio-group>
+
+        </div>
         <div class="bnt-navs">
           <button mat-raised-button color="primary" mat-button matStepperNext>
             Continuar
@@ -17,9 +23,55 @@
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Selecciona la cantidad</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Address" formControlName="secondCtrl" required>
-        </mat-form-field>
+        <div class="div-controls">
+
+          <mat-tab-group mat-stretch-tabs class="stretched-tabs">
+            <mat-tab label="Seleccionar la cantidad">
+              <mat-form-field appearance="outline">
+                <mat-label>Selecciona la cantidad</mat-label>
+                <mat-select formControlName="quantity">
+                  <mat-option value="1">1</mat-option>
+                  <mat-option value="2">2</mat-option>
+                  <mat-option value="3">3</mat-option>
+                  <mat-option value="4">4</mat-option>
+                  <mat-option value="5">5</mat-option>
+                  <mat-option value="6">6</mat-option>
+                  <mat-option value="7">7</mat-option>
+                  <mat-option value="8">8</mat-option>
+                  <mat-option value="9">9</mat-option>
+                  <mat-option value="10">10</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-tab>
+            <mat-tab label="Ingresar la cantidad">
+              <mat-form-field appearance="outline">
+                <mat-label>Cantidad</mat-label>
+                <input matInput type="number" formControlName="quantity" required>
+              </mat-form-field>
+            </mat-tab>
+          </mat-tab-group>
+
+          <div padding class="resume">
+            <span>
+              Tu apoyo se registrará como: <b class="b-alias">{{ alias }}</b>
+            </span>
+            <span>
+              Por la cantidad de: <b class="b-alias">{{ quantity * 20 | currency }}</b>
+            </span>
+            <br>
+            <span>Formas de depósito:</span>
+            <br>
+            <span>Cuenta bancaria: <b>xxxx xxxx xxxx</b></span>
+            <span>Tarjeta bancaria: <b>xxxx xxxx xxxx xxxx</b></span>
+            <br>
+            <span>Lugares de depósito:</span>
+            <ul>
+              <li>OXXO</li>
+              <li>Banco</li>
+            </ul>
+          </div>
+
+        </div>
         <div class="bnt-navs">
           <button mat-raised-button color="warn" mat-button matStepperPrevious>
             Anterior
@@ -33,10 +85,33 @@
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Gracias por tu apoyo</ng-template>
-      You are now done.
+      <ng-template matStepLabel>Gracias por tu ayuda</ng-template>
+      <div class="div-controls">
+        <div class="img-thanks">
+          <img src="assets/imgs/thanks.gif" alt="">
+        </div>
+        <div class="text-center">
+          <h4>Se verificará tu depósito</h4>
+          <p>Para sumar tu ayuda, mandanos la captura de depósito por los siguientes medios de contacto junto
+            con tu número de folio:</p>
+          <ul class="contact-thanks">
+            <li>
+              <i class="fab fa-whatsapp icon-whatsapp"></i>
+              Whatsapp
+            </li>
+            <li>
+              <i class="fab fa-telegram-plane icon-telegram"></i>
+              Telegram
+            </li>
+            <li>
+              <i class="far fa-envelope icon-email"></i>
+              Correo electrónico
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="bnt-navs">
-        <button  color="warn" mat-button>
+        <button  color="warn" mat-button (click)="goTohome()">
           Regresar al Inicio
           <mat-icon>home</mat-icon>
         </button>

@@ -1,3 +1,7 @@
+$orange: #ed7902;
+$green: #009f4d;
+$yellow: #ffdd00;
+
 .bnt-navs {
   margin-top: 50px;
   display: flex;
@@ -6,6 +10,77 @@
 
   button {
     margin-left: 10px;
+  }
+}
+
+.div-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px auto;
+}
+
+.group-radios {
+  display: inline-flex;
+  flex-direction: column;
+
+  mat-radio-button {
+    margin: 5px;
+  }
+}
+
+.stretched-tabs {
+  max-width: 600px;
+  width: 100%;
+
+  .mat-form-field {
+    margin-top: 25px;
+    width: 100%;
+  }
+}
+
+.resume{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  span {
+    margin-bottom: 10px;
+  }
+
+  .b-alias {
+    color: $green;
+  }
+}
+
+.img-thanks {
+  display: block;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.contact-thanks {
+  list-style: none;
+  margin-top: 30px;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 5px;
+    color: #5e5e5e;
+
+    .icon-whatsapp {
+      color: green;
+    }
+    .icon-telegram {
+      color: #0088cc;
+      font-size: 1.5em;
+    }
+    .icon-email {
+      color: gray;
+    }
   }
 }
 
