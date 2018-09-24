@@ -11,10 +11,12 @@
             <mat-radio-button color="warn" [value]="2">Alias</mat-radio-button>
             <mat-radio-button color="warn" [value]="3">Facebook</mat-radio-button>
           </mat-radio-group>
+
           <div class="step-one">
             <mat-form-field appearance="outline" *ngIf="showInput">
+            <!-- <mat-form-field appearance="outline"> -->
               <mat-label>Ingrese alias</mat-label>
-              <input matInput placeholder="Input">
+              <input matInput placeholder="Input" formControlName="aliasTemp" [required]="showInput">
             </mat-form-field>
             <button mat-raised-button *ngIf="showButton">
               <i class="fab fa-facebook"></i>
@@ -23,7 +25,7 @@
           </div>
         </div>
         <div class="bnt-navs">
-          <button mat-raised-button color="primary" mat-button matStepperNext>
+          <button mat-raised-button color="primary" mat-button (click)="goNext(stepper)">
             Continuar
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
@@ -84,11 +86,11 @@
 
         </div>
         <div class="bnt-navs">
-          <button mat-raised-button color="warn" mat-button matStepperPrevious>
+          <button mat-raised-button color="warn" mat-button (click)="goBack(stepper)">
             Anterior
             <mat-icon>keyboard_arrow_up</mat-icon>
           </button>
-          <button mat-raised-button color="primary" mat-button matStepperNext>
+          <button mat-raised-button color="primary" mat-button (click)="goNext(stepper)">
             Continuar
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>

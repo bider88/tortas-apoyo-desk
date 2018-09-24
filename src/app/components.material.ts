@@ -11,7 +11,8 @@ import {
   MatInputModule,
   MatRadioModule,
   MatTabsModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDialogModule
 } from '@angular/material';
 
 @NgModule({
@@ -26,7 +27,8 @@ import {
     MatInputModule,
     MatRadioModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   exports: [
     MatToolbarModule,
@@ -39,7 +41,8 @@ import {
     MatInputModule,
     MatRadioModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ]
 })
 export class ComponentsMaterial { }
