@@ -2,10 +2,20 @@ $orange: #BF360C;
 $green: #43A047;
 $yellow: #FFD600;
 
-.line {
+.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   border-bottom: 2px solid $yellow;
+  box-shadow: 0 2px 5px 0 rgba($color: #000000, $alpha: 0.26);
+  z-index: 90;
 }
 
 .color-green {
   color: $green;
+}
+
+.brand {
+  font-size: 1.1em;
 }

@@ -1,3 +1,10 @@
-<p>
-  list works!
-</p>
+<div class="container">
+  <mat-list>
+    <h3 mat-subheader>Personas que más ha apoyado</h3>
+    <mat-list-item *ngFor="let user of users; let i = index">
+      <mat-icon mat-list-icon>person</mat-icon>
+      <p mat-line> {{ i + 1 }}. {{ user.name }} </p>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</div>

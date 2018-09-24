@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { InfoComponent } from './components/info/info.component';
 import { ComponentsMaterial } from './components.material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { ComponentsMaterial } from './components.material';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     ComponentsMaterial
   ],
   providers: [],

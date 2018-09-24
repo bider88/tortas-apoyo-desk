@@ -1,3 +1,46 @@
-<p>
-  help works!
-</p>
+<div class="container">
+  <mat-vertical-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>¿Cómo quieres que quede registrado tu ayuda?</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div class="bnt-navs">
+          <button mat-raised-button color="primary" mat-button matStepperNext>
+            Continuar
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Selecciona la cantidad</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div class="bnt-navs">
+          <button mat-raised-button color="warn" mat-button matStepperPrevious>
+            Anterior
+            <mat-icon>keyboard_arrow_up</mat-icon>
+          </button>
+          <button mat-raised-button color="primary" mat-button matStepperNext>
+            Continuar
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Gracias por tu apoyo</ng-template>
+      You are now done.
+      <div class="bnt-navs">
+        <button  color="warn" mat-button>
+          Regresar al Inicio
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</div>
